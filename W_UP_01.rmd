@@ -41,11 +41,28 @@ $H_A$: The average number of pushups done by line players is statistically diffe
 
 <!--Graphical results here. Make sure to show your code. Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too. Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+
+```{r}
+boxplot(pushups~position,data=mydata)
+```
+
+It seems to me that the "skill" players have more endurance so they produce more pushups than the "line" players.
+
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+favstats(pushups~position,data=mydata)
+```
+
+I can easily tell that the mean for the "skill" players have around 50 pushups. The "line" players average is about 17. It is a 33 difference in pushups. The "skills" players have done around 3 times more than the "line" players.
+
 ## Inferential Results
+
+```{r}
+t.test(pushups~position,data=mydata)
+```
+The probability we get p-value is 0.000009421. I conclude that "skill" players are doing a lot more pushups than the "line" players.
 
 <!--State hypothesis clearly. Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc. Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
@@ -54,3 +71,4 @@ $H_A$: The average number of pushups done by line players is statistically diffe
 
 <!--Discussion and conclusion here. If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason. Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
+I first grabbed the code from my helper files for for my graphical data. I edited the code to "mydata" here so it shows on this workshee. I saw that the "skill" players did more pushups. I then went back to my helper files and grabbed a piece of code but for numerical results. i went back to my helper file to grab the code for my inferential results showing the chance they have.
